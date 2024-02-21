@@ -16,7 +16,15 @@
                 <div class="card-body">
                     <h1>Login FPT Training</h1>
                     <p class="text-medium-emphasis">Sign In to your account</p>
-                    @using(Html.BeginForm("Handle", "Login", FormMethod.Post))
+
+                    @if (ViewData["MessageLogin"] != null)
+                    {
+                        <p class="text-danger text-center">
+                            @ViewData["MessageLogin"]
+                        </p>
+                    }
+
+                    @using(Html.BeginForm("Index", "Login", FormMethod.Post))
                     {
                         <div class="input-group mb-3">
                             <span class="input-group-text">

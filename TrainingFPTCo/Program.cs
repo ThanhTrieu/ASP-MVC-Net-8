@@ -12,6 +12,16 @@ namespace TrainingFPTCo
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
+            builder.Services.AddDistributedMemoryCache();
+            builder.Services.AddSession(options =>
+            {
+                options.Cookie.Name = ".AdventureWorks.Session";
+                options.IdleTimeout = TimeSpan.FromSeconds(10);
+                //options.Cookie.HttpOnly = true;
+                options.Cookie.IsEssential = true;
+            });
+            builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
             var provider = builder.Services.BuildServiceProvider();
             var configuration = provider.GetRequiredService<IConfiguration>();
             builder.Services.AddDbContext<TrainingDbContext>(item => item.UseSqlServer(configuration.GetConnectionString("myconn")));
@@ -32,6 +42,8 @@ namespace TrainingFPTCo
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseSession();
 
             app.MapControllerRoute(
                 name: "default",
