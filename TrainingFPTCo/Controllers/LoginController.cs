@@ -37,5 +37,22 @@ namespace TrainingFPTCo.Controllers
             // cho chuyen vao trang Home
             return RedirectToAction(nameof(DashboardController.Index), "Dashboard");
         }
+
+        [HttpPost]
+        public IActionResult Logout()
+        {
+            // xoa session da tao ra o login
+            // quay ve trang dang nhap
+            if (!string.IsNullOrEmpty(HttpContext.Session.GetString("SessionUserId")))
+            {
+                // xoa session
+                HttpContext.Session.Remove("SessionUserId");
+                HttpContext.Session.Remove("SessionUsername");
+                HttpContext.Session.Remove("SessionRolesId");
+                HttpContext.Session.Remove("SessionEmail");
+            }
+            // quay ve trang dang nhap
+            return RedirectToAction(nameof(LoginController.Index), "Login");
+        }
     }
 }

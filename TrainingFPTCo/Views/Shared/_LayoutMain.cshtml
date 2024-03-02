@@ -180,9 +180,11 @@
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb my-0 ms-2">
               <li class="breadcrumb-item">
-                <!-- if breadcrumb is single--><span>Home</span>
+                <span>@ViewData["breadcrumb"]</span>
               </li>
-              <li class="breadcrumb-item active"><span>Dashboard</span></li>
+              <li class="breadcrumb-item active">
+                <span>@ViewData["breadcrumb_active"]</span>
+              </li>
             </ol>
           </nav>
         </div>

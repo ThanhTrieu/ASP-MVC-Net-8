@@ -9,20 +9,20 @@ namespace TrainingFPTCo.DBContext
         [Key] 
         public int Id { get; set; }
 
-        [Column("NameCategory", TypeName ="Varchar(100)"), Required]
-        public required string NameCategory { get; set; }
+        [Column("Name", TypeName ="Varchar(100)")]
+        public string? Name { get; set; }
 
-        [Column("Description", TypeName ="Varchar(200)"), AllowNull]
+        [Column("Description", TypeName ="Varchar(200)")]
         public string? Description { get; set; }
 
-        [Column("PosterImage", TypeName ="Varchar(200)"), Required]
-        public required string PosterImage { get; set; }
+        [Column("PosterImage", TypeName ="Varchar(200)")]
+        public string? PosterImage { get; set; }
 
-        [Column("ParentId", TypeName ="Integer"), Required]
-        public required int ParentId { get; set; }
+        [Column("ParentId", TypeName ="Integer")]
+        public int? ParentId { get; set; }
 
-        [Column("Status", TypeName = "Varchar(20)"), Required]
-        public required string Status { get; set; }
+        [Column("Status", TypeName = "Varchar(20)")]
+        public string? Status { get; set; }
 
         [AllowNull]
         public DateTime? CreatedAt { get; set; }

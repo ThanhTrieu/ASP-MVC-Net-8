@@ -6,6 +6,10 @@ namespace TrainingFPTCo.Controllers
     {
         public IActionResult Index()
         {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("SessionUserId")))
+            {
+                return RedirectToAction(nameof(LoginController.Index), "Login");
+            }
             return View();
         }
     }

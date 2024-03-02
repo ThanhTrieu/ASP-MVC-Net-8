@@ -3,11 +3,27 @@
 *@
 @{
     ViewData["title"] = "Categories";
+    ViewData["breadcrumb"] = "Home";
+    ViewData["breadcrumb_active"] = "Category";
     Layout = "~/Views/Shared/_LayoutMain.cshtml";
+
+    bool statusAdd = Convert.ToBoolean(TempData["saveStatus"]);
 }
 
 <div class="row">
     <div class="col-sm-12 col-md-12">
         <h3> This is Category page !</h3>
+        <a class="btn btn-primary" href="@Url.Action("Add", "Category")"> Add new Category</a>
+        @if (TempData["saveStatus"] != null)
+        {
+            @if (statusAdd)
+            {
+                <div class="text-success my-3"> Add Successfully </div>
+            }
+            else
+            {
+                <div class="text-danger my-3"> Add Failure </div>
+            }
+        }
     </div>
 </div>
