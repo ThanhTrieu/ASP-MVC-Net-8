@@ -1,6 +1,9 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
+
+@model TrainingFPTCo.Models.CategoryViewModel
+
 @{
     ViewData["title"] = "Categories";
     ViewData["breadcrumb"] = "Home";
@@ -25,5 +28,41 @@
                 <div class="text-danger my-3"> Add Failure </div>
             }
         }
+        <table class="table table-bordered table-striped mt-3">
+            <thead class="table-primary">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Image</th>
+                    <th>Description</th>
+                    <th>Status</th>
+                    <th>Created At</th>
+                    <th>Updated At</th>
+                    <th colspan="2" width="10%">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.CategoryDetailList)
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.Name</td>
+                        <td width="10%">
+                            <img class="img-fluid" src="/uploads/images/@item.PosterNameImage" alt="@item.Name" />
+                        </td>
+                        <td>@item.Description</td>
+                        <td>@item.Status</td>
+                        <td>@item.CreatedAt</td>
+                        <td>@item.UpdatedAt</td>
+                        <td>
+                            <a href="@Url.Action("Update", "Category", new {id = @item.Id})" class="btn btn-info">Edit</a>
+                        </td>
+                        <td>
+                            <a href="@Url.Action("Delete", "Category", new {id = @item.Id})" class="btn btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
     </div>
 </div>

@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.CodeAnalysis;
 using TrainingFPTCo.Validations;
 
 namespace TrainingFPTCo.Models
@@ -24,8 +25,12 @@ namespace TrainingFPTCo.Models
         [AllowSizeFile(5*1024*1024)]
         public IFormFile PosterImage { get; set; }
 
+        // view ten anh
+        [AllowNull]
+        public string? PosterNameImage { get; set; }
 
-        public DateTime? CreateAt { get; set; }
+
+        public DateTime? CreatedAt { get; set; }
         public DateTime? UpdatedAt { get; set; }
         public DateTime? DeletedAt { get; set; }
     }
