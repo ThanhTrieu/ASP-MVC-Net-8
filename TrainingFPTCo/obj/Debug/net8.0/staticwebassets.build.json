@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "qy/f/9acSmsz2Rvft4Wc05x7plXFIvC9IkUCaGukTbM=",
+  "Hash": "P/P8jxsa7jIk2lLNf/HXDvKCZN5Up0izYsDHsxWW+TY=",
   "Source": "TrainingFPTCo",
   "BasePath": "_content/TrainingFPTCo",
   "Mode": "Default",
@@ -24831,6 +24831,25 @@
       "OriginalItemSpec": "wwwroot\\uploads\\images\\560b7426-3192-4bce-8606-ebcd77fc8c20-1.jpg"
     },
     {
+      "Identity": "C:\\setup\\CSharp\\TrainingFPTCo\\TrainingFPTCo\\wwwroot\\uploads\\images\\6add6bdc-992c-46f1-8795-ffe3849dba5d-9.jpg",
+      "SourceId": "TrainingFPTCo",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\setup\\CSharp\\TrainingFPTCo\\TrainingFPTCo\\wwwroot\\",
+      "BasePath": "_content/TrainingFPTCo",
+      "RelativePath": "uploads/images/6add6bdc-992c-46f1-8795-ffe3849dba5d-9.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\images\\6add6bdc-992c-46f1-8795-ffe3849dba5d-9.jpg"
+    },
+    {
       "Identity": "C:\\setup\\CSharp\\TrainingFPTCo\\TrainingFPTCo\\wwwroot\\uploads\\images\\7b775004-e7bd-4696-96e3-a562bf58a97b-7.jpg",
       "SourceId": "TrainingFPTCo",
       "SourceType": "Discovered",
@@ -24848,6 +24867,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\images\\7b775004-e7bd-4696-96e3-a562bf58a97b-7.jpg"
+    },
+    {
+      "Identity": "C:\\setup\\CSharp\\TrainingFPTCo\\TrainingFPTCo\\wwwroot\\uploads\\images\\83e701ad-a6cb-446e-9319-f2f3b313538d-5.jpg",
+      "SourceId": "TrainingFPTCo",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\setup\\CSharp\\TrainingFPTCo\\TrainingFPTCo\\wwwroot\\",
+      "BasePath": "_content/TrainingFPTCo",
+      "RelativePath": "uploads/images/83e701ad-a6cb-446e-9319-f2f3b313538d-5.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\images\\83e701ad-a6cb-446e-9319-f2f3b313538d-5.jpg"
     },
     {
       "Identity": "C:\\setup\\CSharp\\TrainingFPTCo\\TrainingFPTCo\\wwwroot\\uploads\\images\\869890df-76b3-4da7-9943-2bdc618d1e84-6jpg",

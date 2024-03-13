@@ -15,11 +15,11 @@ namespace TrainingFPTCo.Controllers
         }
 
         [HttpGet]
-        public IActionResult Index()
+        public IActionResult Index(string SearchString)
         {
             CategoryViewModel categoryModel  = new CategoryViewModel();
             categoryModel.CategoryDetailList = new List<CategoryDetail>();
-            var dataCategory = new CategoryQuery().GetAllCategories();
+            var dataCategory = new CategoryQuery().GetAllCategories(SearchString);
             foreach (var item in dataCategory)
             {
                 categoryModel.CategoryDetailList.Add(new CategoryDetail
@@ -52,22 +52,7 @@ namespace TrainingFPTCo.Controllers
                 try
                 {
                     // upload file
-                    string uniquePoster = UpLoadFile(PosterImage);
-                    /*
-                    var categoryData = new Category()
-                    {
-                        Name = category.Name,
-                        Description = category.Description,
-                        PosterImage = uniquePoster,
-                        ParentId = 0,
-                        Status = category.Status,
-                        CreatedAt = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"))
-                    };
-
-                    // luu vao database
-                    _dbContext.Categories.Add(categoryData);
-                    _dbContext.SaveChangesAsync(true);
-                    */
+                    string uniquePoster = UploadFileHelper.UpLoadFile(PosterImage);
                     int idCategory = new CategoryQuery().InsertItemCategory(category.Name, category.Description, uniquePoster, category.Status);
                     if (idCategory > 0)
                     {
@@ -90,33 +75,60 @@ namespace TrainingFPTCo.Controllers
             }
             return View(category);
         }
-        private string UpLoadFile(IFormFile file)
+
+        [HttpGet]
+        public IActionResult Update(int id = 0)
         {
-            string uniqueFileName;
+            CategoryDetail categoryDetail = new CategoryQuery().GetDataCategoryById(id);
+            return View(categoryDetail);
+        }
+
+        [HttpPost]
+        public IActionResult Update(CategoryDetail category, IFormFile PosterImage)
+        {
+
             try
             {
-                string pathUploadServer = "wwwroot\\uploads\\images";
-                string fileName = file.FileName;
-                
-                string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(fileName);
-                fileNameWithoutExtension = CommonText.GenerateSlug(fileNameWithoutExtension);
-
-                string ext = Path.GetExtension(fileName);
-
-                // tao ten file khong trung nhau
-                string uniqueStr = Guid.NewGuid().ToString(); // random string
-                string fileNameUpload = uniqueStr + "-" + fileNameWithoutExtension + ext;
-
-                string uploadPath = Path.Combine(Directory.GetCurrentDirectory(),pathUploadServer, fileNameUpload);
-                var stream = new FileStream(uploadPath, FileMode.Create);
-                file.CopyToAsync(stream);
-                uniqueFileName = fileNameUpload;
+                var detail = new CategoryQuery().GetDataCategoryById(category.Id);
+                string uniqueFilePoster = detail.PosterNameImage;
+                // nguoi dung co upload file ko?
+                if (category.PosterImage != null)
+                {
+                    // co upload de thay anh poster
+                    uniqueFilePoster = UploadFileHelper.UpLoadFile(PosterImage);
+                }
+                bool updateCategory = new CategoryQuery().UpdateCategoryById(category.Name, category.Description, uniqueFilePoster, category.Status, category.Id);
+                if (updateCategory)
+                {
+                    TempData["updateStatus"] = true;
+                }
+                else
+                {
+                    TempData["updateStatus"] = false;
+                }
+                return RedirectToAction(nameof(CategoryController.Index), "Category");
             }
             catch (Exception ex)
             {
-                uniqueFileName = ex.Message.ToString();
+                //return Ok(ex.Message);
+                return View(category);
             }
-            return uniqueFileName;
+        }
+
+        [HttpGet]
+        public IActionResult Delete(int id = 0)
+        {
+            // xu ly xoa danh muc khoa hoc
+            bool deleteCategory = new CategoryQuery().DeleteItemCatgoryById(id);
+            if (deleteCategory)
+            {
+                TempData["statusDelete"] = true;
+            }
+            else
+            {
+                TempData["statusDelete"] = false;
+            }
+            return RedirectToAction(nameof(CategoryController.Index), "Category");
         }
     }
 }

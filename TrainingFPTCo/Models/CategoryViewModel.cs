@@ -21,14 +21,13 @@ namespace TrainingFPTCo.Models
         public string Status { get; set; }
 
         [Required(ErrorMessage = "Choose file, please")]
-        [AllowExtensionFile(new string[] {".png", ".jpg", ".jpeg"})]
-        [AllowSizeFile(5*1024*1024)]
-        public IFormFile PosterImage { get; set; }
+        [AllowExtensionFile(new string[] { ".png", ".jpg", ".jpeg" })]
+        [AllowSizeFile(5 * 1024 * 1024)]
+        public IFormFile? PosterImage { get; set; }
 
         // view ten anh
         [AllowNull]
         public string? PosterNameImage { get; set; }
-
 
         public DateTime? CreatedAt { get; set; }
         public DateTime? UpdatedAt { get; set; }
