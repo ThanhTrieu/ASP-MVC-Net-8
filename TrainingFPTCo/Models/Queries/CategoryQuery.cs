@@ -100,17 +100,29 @@ namespace TrainingFPTCo.Models.Queries
             return categoryDetail;
         }
 
-        public List<CategoryDetail> GetAllCategories(string SearchString)
+        public List<CategoryDetail> GetAllCategories(string? SearchString, string? FilterStatus)
         {
             List<CategoryDetail> category = new List<CategoryDetail>();
 
             using (SqlConnection conn = Database.GetSqlConnection())
             {
                 // chi lay ra danh sach khong bi xoa
-                string sqlData = "SELECT * FROM [Categories] WHERE [Name] LIKE @keyWord AND [DeletedAt] IS NULL";
+                string sqlData = string.Empty;
+                if (FilterStatus != null)
+                {
+                    sqlData = "SELECT * FROM [Categories] WHERE [Name] LIKE @keyWord AND [DeletedAt] IS NULL AND [Status] = @status";
+                }
+                else
+                {
+                    sqlData = "SELECT * FROM [Categories] WHERE [Name] LIKE @keyWord AND [DeletedAt] IS NULL";
+                }
                 conn.Open();
                 SqlCommand command = new SqlCommand(sqlData, conn);
                 command.Parameters.AddWithValue("@keyWord", "%"+SearchString+"%" ?? DBNull.Value.ToString());
+                if (FilterStatus != null)
+                {
+                    command.Parameters.AddWithValue("@status", FilterStatus ?? DBNull.Value.ToString());
+                }
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
                     while (reader.Read())

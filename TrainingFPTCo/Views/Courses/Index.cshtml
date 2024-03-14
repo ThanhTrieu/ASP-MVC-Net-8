@@ -1,0 +1,15 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["title"] = "Courses";
+    ViewData["breadcrumb"] = "Home";
+    ViewData["breadcrumb_active"] = "Courses";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+<div class="row">
+    <div class="col-sm-12 col-md-12">
+        <h3 class="text-center"> This is Courses page !</h3>
+        <a class="btn btn-primary" href="@Url.Action("Add", "Courses")"> Add new Courses</a>
+    </div>
+</div>

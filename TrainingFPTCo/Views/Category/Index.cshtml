@@ -22,11 +22,35 @@
         <form asp-action="Index" method="get" class="my-3">
             <div class="form-actions no-color">
                 <p class="mb-0">
-                    Find by Name: <input type="text" name="SearchString" />
-                    <button type="submit" class="btn btn-primary btn-sm mb-0"> Search </button>
+                    Find by Name:<input value="@ViewData["currentFilter"]" type="text" name="SearchString" />
+                    <span> | </span>
+                    <select name="FilterStatus">
+                        <option value=""> -- Status --</option>
+                        @if (ViewBag.FilterStatus == "Active")
+                        {
+                            <option value="Active" selected="selected"> Active </option>
+                        }
+                        else
+                        {
+                            <option value="Active"> Active </option>
+                        }
+                        @if (ViewBag.FilterStatus == "Deactive")
+                        {
+                            <option value="Deactive" selected="selected"> Deactive </option>
+                        }
+                        else
+                        {
+                            <option value="Deactive"> Deactive </option>
+                        }
+                    </select>
+
+                    <span> | </span>
+                    <button type="submit" class="btn btn-primary btn-sm mb-0"> Filter and Search </button>
+                    <span> | </span>
                     <a asp-action="Index"> Back To list </a>
                 </p>
             </div>
+
         </form>
         @if (TempData["saveStatus"] != null)
         {

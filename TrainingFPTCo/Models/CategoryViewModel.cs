@@ -8,6 +8,7 @@ namespace TrainingFPTCo.Models
     {
         public List<CategoryDetail> CategoryDetailList { get; set; }
     }
+    
     public class CategoryDetail
     {
         public int Id { get; set; }

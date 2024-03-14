@@ -15,11 +15,11 @@ namespace TrainingFPTCo.Controllers
         }
 
         [HttpGet]
-        public IActionResult Index(string SearchString)
+        public IActionResult Index(string SearchString, string FilterStatus)
         {
-            CategoryViewModel categoryModel  = new CategoryViewModel();
+            CategoryViewModel categoryModel = new CategoryViewModel();
             categoryModel.CategoryDetailList = new List<CategoryDetail>();
-            var dataCategory = new CategoryQuery().GetAllCategories(SearchString);
+            var dataCategory = new CategoryQuery().GetAllCategories(SearchString, FilterStatus);
             foreach (var item in dataCategory)
             {
                 categoryModel.CategoryDetailList.Add(new CategoryDetail
@@ -33,6 +33,9 @@ namespace TrainingFPTCo.Controllers
                     UpdatedAt = item.UpdatedAt
                 });
             }
+
+            ViewData["currentFilter"] = SearchString;
+            ViewBag.FilterStatus = FilterStatus;
             return View(categoryModel);
         }
 

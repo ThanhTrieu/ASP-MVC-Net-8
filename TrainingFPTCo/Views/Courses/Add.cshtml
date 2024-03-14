@@ -1,0 +1,73 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@model TrainingFPTCo.Models.CourseDetail
+
+@{
+    ViewData["title"] = "Add Courses";
+    ViewData["breadcrumb"] = "Home";
+    ViewData["breadcrumb_active"] = "Add New Courses";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+<div class="row">
+    <div class="col-sm-12 col-md-12">
+        <h3> Add new Courses page !</h3>
+        <a class="btn btn-primary" href="@Url.Action("Index", "Courses")">  Back to List Courses</a>
+        <div class="card mt-5">
+            <div class="card-header">
+                <h5>Create Course</h5>
+            </div>
+            <div class="card-body">
+                <form enctype="multipart/form-data" method="post" asp-action="Add">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6">
+                            <div class="form-group mb-3">
+                                <label asp-for="Name"></label>
+                                <input type="text" class="form-control" asp-for="Name" />
+                                <span asp-validation-for="Name" class="text-danger"></span>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label asp-for="CategoryId">Category</label>
+                                <select
+                                    asp-for="CategoryId"
+                                    class="form-control"
+                                    asp-items="@(new SelectList(ViewBag.Categories, "Value", "Text"))"></select>
+                                <span asp-validation-for="CategoryId" class="text-danger"></span>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label asp-for="Description"></label>
+                                <textarea rows="5" asp-for="Description" class="form-control"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-6">
+                            <div class="form-group mb-3">
+                                <label asp-for="StartDate">Start date</label>
+                                <input class="form-control" type="date" asp-for="StartDate" />
+                                <span asp-validation-for="StartDate" class="text-danger"></span>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label asp-for="EndDate">End date</label>
+                                <input class="form-control" type="date" asp-for="EndDate" />
+                            </div>
+                            <div class="form-group mb-3">
+                                <label asp-for="Status"></label>
+                                <select asp-for="Status" class="form-control">
+                                    <option value="Active"> Active</option>
+                                    <option value="Deactive"> Deactive</option>
+                                </select>
+                                <span asp-validation-for="Status"></span>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label asp-for="Image"></label>
+                                <input type="file" asp-for="Image" class="form-control" />
+                                <span asp-validation-for="Image"></span>
+                            </div>
+                            <button type="submit" class="my-3 btn btn-primary"> Save </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
