@@ -1,0 +1,138 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\setup\\CSharp\\TrainingFPTCo\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B7BE7C9B-0B63-442C-9448-CA48390545C1}|TrainingFPTCo\\TrainingFPTCo.csproj|c:\\setup\\csharp\\trainingfptco\\trainingfptco\\wwwroot\\js\\course.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{B7BE7C9B-0B63-442C-9448-CA48390545C1}|TrainingFPTCo\\TrainingFPTCo.csproj|solutionrelative:trainingfptco\\wwwroot\\js\\course.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7BE7C9B-0B63-442C-9448-CA48390545C1}|TrainingFPTCo\\TrainingFPTCo.csproj|C:\\setup\\CSharp\\TrainingFPTCo\\trainingfptco\\controllers\\coursescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7BE7C9B-0B63-442C-9448-CA48390545C1}|TrainingFPTCo\\TrainingFPTCo.csproj|solutionrelative:trainingfptco\\controllers\\coursescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7BE7C9B-0B63-442C-9448-CA48390545C1}|TrainingFPTCo\\TrainingFPTCo.csproj|C:\\setup\\CSharp\\TrainingFPTCo\\trainingfptco\\views\\courses\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B7BE7C9B-0B63-442C-9448-CA48390545C1}|TrainingFPTCo\\TrainingFPTCo.csproj|solutionrelative:trainingfptco\\views\\courses\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7BE7C9B-0B63-442C-9448-CA48390545C1}|TrainingFPTCo\\TrainingFPTCo.csproj|c:\\setup\\csharp\\trainingfptco\\trainingfptco\\views\\shared\\_layoutmain.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B7BE7C9B-0B63-442C-9448-CA48390545C1}|TrainingFPTCo\\TrainingFPTCo.csproj|solutionrelative:trainingfptco\\views\\shared\\_layoutmain.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7BE7C9B-0B63-442C-9448-CA48390545C1}|TrainingFPTCo\\TrainingFPTCo.csproj|c:\\setup\\csharp\\trainingfptco\\trainingfptco\\models\\queries\\coursequery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7BE7C9B-0B63-442C-9448-CA48390545C1}|TrainingFPTCo\\TrainingFPTCo.csproj|solutionrelative:trainingfptco\\models\\queries\\coursequery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7BE7C9B-0B63-442C-9448-CA48390545C1}|TrainingFPTCo\\TrainingFPTCo.csproj|c:\\setup\\csharp\\trainingfptco\\trainingfptco\\models\\courseviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7BE7C9B-0B63-442C-9448-CA48390545C1}|TrainingFPTCo\\TrainingFPTCo.csproj|solutionrelative:trainingfptco\\models\\courseviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7BE7C9B-0B63-442C-9448-CA48390545C1}|TrainingFPTCo\\TrainingFPTCo.csproj|C:\\setup\\CSharp\\TrainingFPTCo\\trainingfptco\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7BE7C9B-0B63-442C-9448-CA48390545C1}|TrainingFPTCo\\TrainingFPTCo.csproj|solutionrelative:trainingfptco\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "course.js",
+              "DocumentMoniker": "C:\\setup\\CSharp\\TrainingFPTCo\\TrainingFPTCo\\wwwroot\\js\\course.js",
+              "RelativeDocumentMoniker": "TrainingFPTCo\\wwwroot\\js\\course.js",
+              "ToolTip": "C:\\setup\\CSharp\\TrainingFPTCo\\TrainingFPTCo\\wwwroot\\js\\course.js",
+              "RelativeToolTip": "TrainingFPTCo\\wwwroot\\js\\course.js",
+              "ViewState": "AQIAAAMAAABAZWZmZmYqwAgAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-03-20T03:46:41.582Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "_LayoutMain.cshtml",
+              "DocumentMoniker": "C:\\setup\\CSharp\\TrainingFPTCo\\TrainingFPTCo\\Views\\Shared\\_LayoutMain.cshtml",
+              "RelativeDocumentMoniker": "TrainingFPTCo\\Views\\Shared\\_LayoutMain.cshtml",
+              "ToolTip": "C:\\setup\\CSharp\\TrainingFPTCo\\TrainingFPTCo\\Views\\Shared\\_LayoutMain.cshtml",
+              "RelativeToolTip": "TrainingFPTCo\\Views\\Shared\\_LayoutMain.cshtml",
+              "ViewState": "AQIAAMwAAAAAODMzMzMwwNcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-20T03:40:28.267Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CourseViewModel.cs",
+              "DocumentMoniker": "C:\\setup\\CSharp\\TrainingFPTCo\\TrainingFPTCo\\Models\\CourseViewModel.cs",
+              "RelativeDocumentMoniker": "TrainingFPTCo\\Models\\CourseViewModel.cs",
+              "ToolTip": "C:\\setup\\CSharp\\TrainingFPTCo\\TrainingFPTCo\\Models\\CourseViewModel.cs",
+              "RelativeToolTip": "TrainingFPTCo\\Models\\CourseViewModel.cs",
+              "ViewState": "AQIAAAoAAABg0MzMzMw5wA8AAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-20T02:46:55.007Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CourseQuery.cs",
+              "DocumentMoniker": "C:\\setup\\CSharp\\TrainingFPTCo\\TrainingFPTCo\\Models\\Queries\\CourseQuery.cs",
+              "RelativeDocumentMoniker": "TrainingFPTCo\\Models\\Queries\\CourseQuery.cs",
+              "ToolTip": "C:\\setup\\CSharp\\TrainingFPTCo\\TrainingFPTCo\\Models\\Queries\\CourseQuery.cs",
+              "RelativeToolTip": "TrainingFPTCo\\Models\\Queries\\CourseQuery.cs",
+              "ViewState": "AQIAAA8AAAAA7DIzMzPjvxAAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-20T00:56:37.75Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\setup\\CSharp\\TrainingFPTCo\\TrainingFPTCo\\Views\\Courses\\Index.cshtml",
+              "RelativeDocumentMoniker": "TrainingFPTCo\\Views\\Courses\\Index.cshtml",
+              "ToolTip": "C:\\setup\\CSharp\\TrainingFPTCo\\TrainingFPTCo\\Views\\Courses\\Index.cshtml",
+              "RelativeToolTip": "TrainingFPTCo\\Views\\Courses\\Index.cshtml",
+              "ViewState": "AQIAAD4AAADAl5mZmZk1wEcAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-20T01:35:41.082Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CategoryController.cs",
+              "DocumentMoniker": "C:\\setup\\CSharp\\TrainingFPTCo\\TrainingFPTCo\\Controllers\\CategoryController.cs",
+              "RelativeDocumentMoniker": "TrainingFPTCo\\Controllers\\CategoryController.cs",
+              "ToolTip": "C:\\setup\\CSharp\\TrainingFPTCo\\TrainingFPTCo\\Controllers\\CategoryController.cs",
+              "RelativeToolTip": "TrainingFPTCo\\Controllers\\CategoryController.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAAACIAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-14T03:30:33.095Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CoursesController.cs",
+              "DocumentMoniker": "C:\\setup\\CSharp\\TrainingFPTCo\\TrainingFPTCo\\Controllers\\CoursesController.cs",
+              "RelativeDocumentMoniker": "TrainingFPTCo\\Controllers\\CoursesController.cs",
+              "ToolTip": "C:\\setup\\CSharp\\TrainingFPTCo\\TrainingFPTCo\\Controllers\\CoursesController.cs",
+              "RelativeToolTip": "TrainingFPTCo\\Controllers\\CoursesController.cs",
+              "ViewState": "AQIAAGEAAAAANDMzMzMTwGoAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-14T02:50:20.875Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

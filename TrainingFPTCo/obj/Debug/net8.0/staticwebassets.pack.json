@@ -13,6 +13,14 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\setup\\CSharp\\TrainingFPTCo\\TrainingFPTCo\\wwwroot\\js\\course.js",
+      "PackagePath": "staticwebassets\\js\\course.js"
+    },
+    {
+      "Id": "C:\\setup\\CSharp\\TrainingFPTCo\\TrainingFPTCo\\wwwroot\\js\\jquery-3.7.1.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery-3.7.1.min.js"
+    },
+    {
       "Id": "C:\\setup\\CSharp\\TrainingFPTCo\\TrainingFPTCo\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
@@ -5213,6 +5221,14 @@
       "PackagePath": "staticwebassets\\training\\vendors\\simplebar\\js\\simplebar.min.js"
     },
     {
+      "Id": "C:\\setup\\CSharp\\TrainingFPTCo\\TrainingFPTCo\\wwwroot\\uploads\\images\\05741c45-9bdc-43f5-aaa8-5724ba26cfdb-2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\images\\05741c45-9bdc-43f5-aaa8-5724ba26cfdb-2.jpg"
+    },
+    {
+      "Id": "C:\\setup\\CSharp\\TrainingFPTCo\\TrainingFPTCo\\wwwroot\\uploads\\images\\3a2735f8-8192-4627-ad2d-56791f4617ae-7.jpg",
+      "PackagePath": "staticwebassets\\uploads\\images\\3a2735f8-8192-4627-ad2d-56791f4617ae-7.jpg"
+    },
+    {
       "Id": "C:\\setup\\CSharp\\TrainingFPTCo\\TrainingFPTCo\\wwwroot\\uploads\\images\\42cc8d68-4d94-48f2-acc2-d3fb859425c6-1jpg",
       "PackagePath": "staticwebassets\\uploads\\images"
     },
@@ -5239,6 +5255,10 @@
     {
       "Id": "C:\\setup\\CSharp\\TrainingFPTCo\\TrainingFPTCo\\wwwroot\\uploads\\images\\8702220d-6667-4bf9-b711-504bb3b9fe49-2.jpg",
       "PackagePath": "staticwebassets\\uploads\\images\\8702220d-6667-4bf9-b711-504bb3b9fe49-2.jpg"
+    },
+    {
+      "Id": "C:\\setup\\CSharp\\TrainingFPTCo\\TrainingFPTCo\\wwwroot\\uploads\\images\\ed5eb595-1ba2-41b9-809c-dcb5de3509ce-9.jpg",
+      "PackagePath": "staticwebassets\\uploads\\images\\ed5eb595-1ba2-41b9-809c-dcb5de3509ce-9.jpg"
     },
     {
       "Id": "C:\\setup\\CSharp\\TrainingFPTCo\\TrainingFPTCo\\wwwroot\\uploads\\images\\f7ea7a56-60e1-413d-a40f-21a5a4b742a8-4.jpg",

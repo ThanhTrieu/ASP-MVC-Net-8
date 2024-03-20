@@ -11,7 +11,25 @@ namespace TrainingFPTCo.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            return View();
+            CourseViewModel course = new CourseViewModel();
+            course.CourseDetailsList = new List<CourseDetail>();
+            var dataCourses = new CourseQuery().GetAllDataCourses();
+            foreach (var data in dataCourses)
+            {
+                course.CourseDetailsList.Add(new CourseDetail
+                {
+                    Id = data.Id,
+                    Name = data.Name,
+                    CategoryId = data.CategoryId,
+                    Description = data.Description,
+                    Status = data.Status,
+                    StartDate = data.StartDate,
+                    EndDate = data.EndDate,
+                    ViewImageCouser = data.ViewImageCouser,
+                    ViewCategoryName = data.ViewCategoryName
+                });
+            }
+            return View(course);
         }
 
         [HttpGet]
@@ -81,6 +99,12 @@ namespace TrainingFPTCo.Controllers
             }
             ViewBag.Categories = itemCategories;
             return View(course);
+        }
+
+        [HttpPost]
+        public JsonResult Delete(int id = 0)
+        {
+            return Json(id);
         }
     }
 }

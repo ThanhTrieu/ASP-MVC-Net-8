@@ -9,7 +9,7 @@ namespace TrainingFPTCo.Models.Queries
             List<CourseDetail> courses = new List<CourseDetail>();
             using (SqlConnection connection = Database.GetSqlConnection())
             {
-                string sql = "SELECT * FROM [Courses] WHERE [DeletedAt] IS NULL";
+                string sql = "SELECT [co].*, [ca].[Name] AS [CategoryName] FROM [Courses] AS [co] INNER JOIN [Categories] AS [ca] ON [co].[CategoryId] = [ca].[Id] WHERE [co].[DeletedAt] IS NULL";
                 connection.Open();
                 SqlCommand cmd = new SqlCommand(sql, connection);
                 using (SqlDataReader reader = cmd.ExecuteReader())
@@ -17,7 +17,18 @@ namespace TrainingFPTCo.Models.Queries
                     while (reader.Read())
                     {
                         CourseDetail detail = new CourseDetail();
+                        detail.Id = Convert.ToInt32(reader["Id"]);
+                        detail.Name = reader["Name"].ToString() ?? DBNull.Value.ToString();
+                        detail.Description = reader["Description"].ToString();
+                        detail.CategoryId = Convert.ToInt32(reader["CategoryId"]);
+                        detail.StartDate = Convert.ToDateTime(reader["StartDate"]);
+                        detail.EndDate = Convert.ToDateTime(reader["EndDate"]);
+                        detail.ViewImageCouser = reader["Image"].ToString();
+                        detail.ViewCategoryName = reader["CategoryName"].ToString();
+                        detail.Status = reader["Status"].ToString() ?? DBNull.Value.ToString();
+                        courses.Add(detail);
                     }
+                    connection.Close();
                 }
             }
             return courses;

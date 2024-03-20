@@ -1,6 +1,9 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
+
+@model TrainingFPTCo.Models.CourseViewModel
+
 @{
     ViewData["title"] = "Courses";
     ViewData["breadcrumb"] = "Home";
@@ -24,5 +27,50 @@
                 <div class="text-danger my-3"> Add Failure</div>
             }
         }
+
+        <table class="table table-bordered table-striped mt-3">
+            <thead class="table-primary">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Image</th>
+                    <th>Description</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Status</th>
+                    <th width="10%" class="text-center" colspan="2">
+                        Actions
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.CourseDetailsList)
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.Name</td>
+                        <td>@item.ViewCategoryName</td>
+                        <td width="15%">
+                            <img class="img-fluid img-thumbnail" alt="@item.Name" src="/uploads/images/@item.ViewImageCouser" />
+                        </td>
+                        <td>@item.Description</td>
+                        <td>@item.StartDate</td>
+                        <td>@item.EndDate</td>
+                        <td>@item.Status</td>
+                        <td>
+                            <a class="btn btn-info btn-sm" href="@Url.Action("Update", "Courese",new {id = item.Id})"> Edit</a>
+                        </td>
+                        <td>
+                            <button id="@item.Id" class="btn btn-danger btn-sm js-delete-course"> Delete</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
     </div>
 </div>
+@section javascripts
+{
+    <script src="/js/course.js"></script>
+}

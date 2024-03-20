@@ -15,6 +15,8 @@ namespace TrainingFPTCo.Models
         [Required(ErrorMessage = "Choose Category, please")]
         public int CategoryId { get; set; }
 
+        public string? ViewCategoryName { get; set; }
+
         [Required(ErrorMessage = "Enter name's course, please")]
         public string Name { get; set; }
 
@@ -30,6 +32,8 @@ namespace TrainingFPTCo.Models
         [AllowExtensionFile(new string[] {".png", ".jpg", ".jpeg"})]
         [AllowSizeFile(5 * 1024 * 1024)]
         public IFormFile Image { get; set; }
+
+        public string? ViewImageCouser {  get; set; }
 
         public int? LikeCourse {  get; set; }
 

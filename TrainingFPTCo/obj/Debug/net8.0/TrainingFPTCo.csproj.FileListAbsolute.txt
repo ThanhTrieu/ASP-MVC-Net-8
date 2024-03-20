@@ -133,5 +133,5 @@ C:\setup\CSharp\TrainingFPTCo\TrainingFPTCo\bin\Debug\net8.0\runtimes\win\lib\ne
 C:\setup\CSharp\TrainingFPTCo\TrainingFPTCo\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\setup\CSharp\TrainingFPTCo\TrainingFPTCo\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\setup\CSharp\TrainingFPTCo\TrainingFPTCo\obj\Debug\net8.0\TrainingFPTCo.csproj.AssemblyReference.cache
-C:\setup\CSharp\TrainingFPTCo\TrainingFPTCo\obj\Debug\net8.0\TrainingFPTCo.csproj.CopyComplete
 C:\setup\CSharp\TrainingFPTCo\TrainingFPTCo\obj\Debug\net8.0\TrainingFPTCo.sourcelink.json
+C:\setup\CSharp\TrainingFPTCo\TrainingFPTCo\obj\Debug\net8.0\Training.E9CFFE01.Up2Date
