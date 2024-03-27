@@ -26,7 +26,13 @@ namespace TrainingFPTCo.Models
         public DateTime StartDate { get; set; }
 
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        public string? ViewStartDate { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime? EndDate { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        public string? ViewEndDate { get; set; }
 
         [Required(ErrorMessage = "Choose file image, please")]
         [AllowExtensionFile(new string[] {".png", ".jpg", ".jpeg"})]

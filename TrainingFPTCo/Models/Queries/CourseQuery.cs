@@ -4,12 +4,57 @@ namespace TrainingFPTCo.Models.Queries
 {
     public class CourseQuery
     {
+        public bool DeleteCourseById(int id)
+        {
+            bool checkDelete = false;
+            using (SqlConnection connection = Database.GetSqlConnection())
+            {
+                string sqlQuery = "UPDATE [Courses] SET [DeletedAt] = @DeletedAt WHERE [Id] = @id";
+                connection.Open();
+                SqlCommand cmd = new SqlCommand(sqlQuery, connection);
+                cmd.Parameters.AddWithValue("@DeletedAt", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                cmd.Parameters.AddWithValue("@Id", id);
+                cmd.ExecuteNonQuery();
+                checkDelete = true;
+                connection.Close();
+            }
+            return checkDelete;
+        }
+
+        public CourseDetail GetDetailCourseById(int id)
+        {
+            CourseDetail detail = new CourseDetail();
+            using (SqlConnection connection = Database.GetSqlConnection())
+            {
+                string sql = "SELECT * FROM [Courses] WHERE [Id] = @id AND [DeletedAt] IS NULL";
+                connection.Open();
+                SqlCommand cmd = new SqlCommand (sql, connection);
+                cmd.Parameters.AddWithValue("@id", id);
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        detail.Id = Convert.ToInt32(reader["Id"]);
+                        detail.Name = reader["Name"].ToString();
+                        detail.CategoryId = Convert.ToInt32(reader["CategoryId"]);
+                        detail.Description = reader["Description"].ToString();
+                        detail.StartDate = Convert.ToDateTime(reader["StartDate"]);
+                        detail.EndDate = Convert.ToDateTime(reader["EndDate"]);
+                        detail.Status = reader["Status"].ToString();
+                        detail.ViewImageCouser = reader["Image"].ToString();
+                    }
+                }
+                connection.Close ();
+            }
+            return detail;
+        }
+
         public List<CourseDetail> GetAllDataCourses()
         {
             List<CourseDetail> courses = new List<CourseDetail>();
             using (SqlConnection connection = Database.GetSqlConnection())
             {
-                string sql = "SELECT [co].*, [ca].[Name] AS [CategoryName] FROM [Courses] AS [co] INNER JOIN [Categories] AS [ca] ON [co].[CategoryId] = [ca].[Id] WHERE [co].[DeletedAt] IS NULL";
+                string sql = "SELECT [co].*, CONVERT(VARCHAR(10), [co].[StartDate], 101) AS Start_Date,CONVERT(VARCHAR(10), [co].[EndDate], 101) AS End_Date, [ca].[Name] AS [CategoryName] FROM [Courses] AS [co] INNER JOIN [Categories] AS [ca] ON [co].[CategoryId] = [ca].[Id] WHERE [co].[DeletedAt] IS NULL";
                 connection.Open();
                 SqlCommand cmd = new SqlCommand(sql, connection);
                 using (SqlDataReader reader = cmd.ExecuteReader())
@@ -21,6 +66,8 @@ namespace TrainingFPTCo.Models.Queries
                         detail.Name = reader["Name"].ToString() ?? DBNull.Value.ToString();
                         detail.Description = reader["Description"].ToString();
                         detail.CategoryId = Convert.ToInt32(reader["CategoryId"]);
+                        detail.ViewStartDate = reader["Start_Date"].ToString();
+                        detail.ViewStartDate = reader["End_Date"].ToString();
                         detail.StartDate = Convert.ToDateTime(reader["StartDate"]);
                         detail.EndDate = Convert.ToDateTime(reader["EndDate"]);
                         detail.ViewImageCouser = reader["Image"].ToString();

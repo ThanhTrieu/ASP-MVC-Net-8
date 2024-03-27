@@ -11,6 +11,8 @@
     Layout = "~/Views/Shared/_LayoutMain.cshtml";
 
     bool saveStatus = Convert.ToBoolean(TempData["saveStatus"]);
+    // lay ra giay o thoi diem hien tai
+    var Timestamp = new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds();
 }
 <div class="row">
     <div class="col-sm-12 col-md-12">
@@ -47,7 +49,7 @@
             <tbody>
                 @foreach (var item in Model.CourseDetailsList)
                 {
-                    <tr>
+                    <tr class="row-course-@item.Id">
                         <td>@item.Id</td>
                         <td>@item.Name</td>
                         <td>@item.ViewCategoryName</td>
@@ -55,11 +57,11 @@
                             <img class="img-fluid img-thumbnail" alt="@item.Name" src="/uploads/images/@item.ViewImageCouser" />
                         </td>
                         <td>@item.Description</td>
-                        <td>@item.StartDate</td>
-                        <td>@item.EndDate</td>
+                        <td>@item.ViewStartDate</td>
+                        <td>@item.ViewEndDate</td>
                         <td>@item.Status</td>
                         <td>
-                            <a class="btn btn-info btn-sm" href="@Url.Action("Update", "Courese",new {id = item.Id})"> Edit</a>
+                            <a class="btn btn-info btn-sm" href="@Url.Action("Update", "Courses",new {id = item.Id})"> Edit</a>
                         </td>
                         <td>
                             <button id="@item.Id" class="btn btn-danger btn-sm js-delete-course"> Delete</button>
@@ -72,5 +74,5 @@
 </div>
 @section javascripts
 {
-    <script src="/js/course.js"></script>
+    <script src="/js/course.js?v=@Timestamp"></script>
 }

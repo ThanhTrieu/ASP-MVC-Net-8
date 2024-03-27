@@ -11,8 +11,15 @@ $(function () {
                     self.text("Loading ...");
                 },
                 success: function (response) {
-                    console.log(response);
                     self.text("Delete");
+                    if (response.cod == 200) {
+                        alert(response.message);
+                        // An bo dong vua xoa
+                        $('.row-course-' + idCourse).hide();
+                    } else {
+                        alert(response.message);
+                        return;
+                    }
                 }
             });
         }

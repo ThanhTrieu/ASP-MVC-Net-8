@@ -23,6 +23,8 @@ namespace TrainingFPTCo.Controllers
                     CategoryId = data.CategoryId,
                     Description = data.Description,
                     Status = data.Status,
+                    ViewStartDate = data.ViewStartDate,
+                    ViewEndDate = data.ViewEndDate,
                     StartDate = data.StartDate,
                     EndDate = data.EndDate,
                     ViewImageCouser = data.ViewImageCouser,
@@ -104,7 +106,30 @@ namespace TrainingFPTCo.Controllers
         [HttpPost]
         public JsonResult Delete(int id = 0)
         {
-            return Json(id);
+            bool deleteCourse = new CourseQuery().DeleteCourseById(id);
+            if (deleteCourse)
+            {
+                return Json(new {cod = 200, message = "Successfully"});
+            }
+            return Json(new { cod = 500, message = "Failure" });
+        }
+
+        [HttpGet]
+        public IActionResult Update(int id)
+        {
+            CourseDetail detail = new CourseQuery().GetDetailCourseById(id);
+            List<SelectListItem> itemCategories = new List<SelectListItem>();
+            var dataCategory = new CategoryQuery().GetAllCategories(null, null);
+            foreach (var item in dataCategory)
+            {
+                itemCategories.Add(new SelectListItem
+                {
+                    Value = item.Id.ToString(),
+                    Text = item.Name
+                });
+            }
+            ViewBag.Categories = itemCategories;
+            return View(detail);
         }
     }
 }
