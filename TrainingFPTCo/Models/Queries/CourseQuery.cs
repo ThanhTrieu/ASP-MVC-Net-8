@@ -91,6 +91,11 @@ namespace TrainingFPTCo.Models.Queries
             string imageCourse
         )
         {
+            string valEndate = DBNull.Value.ToString();
+            if (endDate != null)
+            {
+                valEndate = endDate.Value.ToString();
+            }
             int IdCourse = 0;
             using (SqlConnection connection = Database.GetSqlConnection())
             {
@@ -102,7 +107,7 @@ namespace TrainingFPTCo.Models.Queries
                 cmd.Parameters.AddWithValue ("@Description", description ?? DBNull.Value.ToString());
                 cmd.Parameters.AddWithValue("@Image", imageCourse);
                 cmd.Parameters.AddWithValue("@StartDate", startDate);
-                cmd.Parameters.AddWithValue("@EndDate", endDate);
+                cmd.Parameters.AddWithValue("@EndDate", valEndate);
                 cmd.Parameters.AddWithValue("@Status", status);
                 cmd.Parameters.AddWithValue("@CreatedAt", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
                 IdCourse = Convert.ToInt32(cmd.ExecuteScalar());
