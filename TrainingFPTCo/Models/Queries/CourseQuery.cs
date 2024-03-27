@@ -67,7 +67,7 @@ namespace TrainingFPTCo.Models.Queries
                         detail.Description = reader["Description"].ToString();
                         detail.CategoryId = Convert.ToInt32(reader["CategoryId"]);
                         detail.ViewStartDate = reader["Start_Date"].ToString();
-                        detail.ViewStartDate = reader["End_Date"].ToString();
+                        detail.ViewEndDate = reader["End_Date"].ToString();
                         detail.StartDate = Convert.ToDateTime(reader["StartDate"]);
                         detail.EndDate = Convert.ToDateTime(reader["EndDate"]);
                         detail.ViewImageCouser = reader["Image"].ToString();
