@@ -4,6 +4,43 @@ namespace TrainingFPTCo.Models.Queries
 {
     public class CourseQuery
     {
+        public bool UpdateCourseById(
+            int categoryId,
+            string nameCourse,
+            string? description,
+            string image,
+            DateTime startDate,
+            DateTime? endDate,
+            string status,
+            int id
+        )
+        {
+            string valEndate = DBNull.Value.ToString();
+            if (endDate != null)
+            {
+                valEndate = endDate.Value.ToString();
+            }
+            bool checkUpdate = false;
+            using (SqlConnection connection = Database.GetSqlConnection())
+            {
+                string sql = "UPDATE [Courses] SET [CategoryId] = @CategoryId, [Name] = @Name, [Description] = @Description, [Image] = @Image, [StartDate] = @StartDate, [EndDate] = @EndDate, [Status] = @Status, [UpdatedAt] = @UpdatedAt WHERE [Id] = @Id AND [DeletedAt] IS NULL";
+                connection.Open();
+                SqlCommand cmd = new SqlCommand( sql, connection );
+                cmd.Parameters.AddWithValue("@CategoryId", categoryId);
+                cmd.Parameters.AddWithValue("@Name", nameCourse);
+                cmd.Parameters.AddWithValue("@Description", description ?? DBNull.Value.ToString());
+                cmd.Parameters.AddWithValue("@Image", image);
+                cmd.Parameters.AddWithValue("@StartDate", startDate);
+                cmd.Parameters.AddWithValue("@EndDate", valEndate);
+                cmd.Parameters.AddWithValue("@Status", status);
+                cmd.Parameters.AddWithValue("UpdatedAt", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                cmd.Parameters.AddWithValue("@Id", id);
+                cmd.ExecuteNonQuery();
+                checkUpdate = true;
+                connection.Close();
+            }
+            return checkUpdate;
+        }
         public bool DeleteCourseById(int id)
         {
             bool checkDelete = false;

@@ -55,7 +55,7 @@ namespace TrainingFPTCo.Controllers
                 try
                 {
                     // upload file
-                    string uniquePoster = UploadFileHelper.UpLoadFile(PosterImage);
+                    string uniquePoster = UploadFileHelper.UpLoadFile(PosterImage,"images");
                     int idCategory = new CategoryQuery().InsertItemCategory(category.Name, category.Description, uniquePoster, category.Status);
                     if (idCategory > 0)
                     {
@@ -98,7 +98,7 @@ namespace TrainingFPTCo.Controllers
                 if (category.PosterImage != null)
                 {
                     // co upload de thay anh poster
-                    uniqueFilePoster = UploadFileHelper.UpLoadFile(PosterImage);
+                    uniqueFilePoster = UploadFileHelper.UpLoadFile(PosterImage, "images");
                 }
                 bool updateCategory = new CategoryQuery().UpdateCategoryById(category.Name, category.Description, uniqueFilePoster, category.Status, category.Id);
                 if (updateCategory)

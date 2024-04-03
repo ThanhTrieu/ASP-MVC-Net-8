@@ -62,7 +62,7 @@ namespace TrainingFPTCo.Controllers
                 // xu ly insert course vao database
                 try
                 {
-                    string nameImageCourse = UploadFileHelper.UpLoadFile(Image);
+                    string nameImageCourse = UploadFileHelper.UpLoadFile(Image, "images");
                     int idCourse = new CourseQuery().InsertCourse(
                         course.Name,
                         course.CategoryId,
@@ -130,6 +130,57 @@ namespace TrainingFPTCo.Controllers
             }
             ViewBag.Categories = itemCategories;
             return View(detail);
+        }
+
+        [HttpPost]
+        public IActionResult Update(CourseDetail courseDetail, IFormFile Image)
+        {
+            try
+            {
+                var infoCourse = new CourseQuery().GetDetailCourseById(courseDetail.Id);
+                string imageCourse = infoCourse.ViewImageCouser;
+                // check xem nguoi co thay anh hay ko?
+                if (courseDetail.Image != null)
+                {
+                    // co muon thay anh
+                    imageCourse = UploadFileHelper.UpLoadFile(Image, "images");
+                }
+                bool update = new CourseQuery().UpdateCourseById(
+                        courseDetail.CategoryId,
+                        courseDetail.Name,
+                        courseDetail.Description,
+                        imageCourse,
+                        courseDetail.StartDate,
+                        courseDetail.EndDate,
+                        courseDetail.Status,
+                        courseDetail.Id
+                    );
+                if (update)
+                {
+                    TempData["updateStatus"] = true;
+                }
+                else
+                {
+                    TempData["updateStatus"] = false;
+                }
+                return RedirectToAction("Index", "Courses");
+            }
+            catch (Exception ex)
+            {
+                return Ok(ex.Message);
+            }
+            List<SelectListItem> itemCategories = new List<SelectListItem>();
+            var dataCategory = new CategoryQuery().GetAllCategories(null, null);
+            foreach (var item in dataCategory)
+            {
+                itemCategories.Add(new SelectListItem
+                {
+                    Value = item.Id.ToString(),
+                    Text = item.Name
+                });
+            }
+            ViewBag.Categories = itemCategories;
+            return View(courseDetail);
         }
     }
 }

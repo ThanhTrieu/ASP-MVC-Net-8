@@ -10,7 +10,8 @@
     ViewData["breadcrumb_active"] = "Courses";
     Layout = "~/Views/Shared/_LayoutMain.cshtml";
 
-    bool saveStatus = Convert.ToBoolean(TempData["saveStatus"]);
+    bool saveStatus   = Convert.ToBoolean(TempData["saveStatus"]);
+    bool updateStatus = Convert.ToBoolean(TempData["updateStatus"]);
     // lay ra giay o thoi diem hien tai
     var Timestamp = new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds();
 }
@@ -27,6 +28,17 @@
             else
             {
                 <div class="text-danger my-3"> Add Failure</div>
+            }
+        }
+        @if (TempData["updateStatus"] != null)
+        {
+            @if (updateStatus)
+            {
+                <div class="text-success my-3"> Update Successfully</div>
+            }
+            else
+            {
+                <div class="text-danger my-3"> Update Failure</div>
             }
         }
 
